@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.cefet.ms_customer.MsCustomerApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.069 s -- in com.cefet.ms_customer.MsCustomerApplicationTests

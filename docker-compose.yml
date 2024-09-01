@@ -1,0 +1,110 @@
+---
+version: '3'
+services:
+
+  postgres:
+    container_name: postgres
+    image: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: rei9122947
+      POSTGRES_DB: postgres
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql # Script de inicialização
+    ports:
+      - "5433:5432"
+    restart: unless-stopped
+
+
+  ## Eureka Server
+  server-discovery:
+    image: moheyeldinbadr/service-discovery:latest
+    container_name: discovery-server
+    ports:
+      - "8761:8761"
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    restart: unless-stopped
+
+
+  ## Microservices Docker Compose Config
+  ms-customer:
+    build: ./ms-customer
+    container_name: ms-customer
+    image: ms-customer-imagem
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/ms-customer
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=rei9122947
+      - EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE=http://server-discovery:8761/eureka/
+    ports:
+      - "8082:8082"
+    depends_on:
+      - server-discovery
+      - postgres
+
+  ms-order:
+    build: ./ms-order/ms-order
+    container_name: ms-order
+    image: ms-order-imagem
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/ms-order
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=rei9122947
+      - EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE=http://server-discovery:8761/eureka/
+    ports:
+      - "8084:8084"
+    depends_on:
+      - server-discovery
+      - postgres
+
+  ms-item:
+    build: ./ms-item
+    container_name: ms-item
+    image: ms-item-imagem
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/ms-item
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=rei9122947
+      - EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE=http://server-discovery:8761/eureka/
+    ports:
+      - "8083:8083"
+    depends_on:
+      - server-discovery
+      - postgres
+
+  ms-restaurant:
+    build: ./ms-restaurant
+    container_name: ms-restaurant
+    image: ms-restaurant-imagem
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/ms-restaurant
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=rei9122947
+      - EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE=http://server-discovery:8761/eureka/
+    ports:
+      - "8081:8081"
+    depends_on:
+      - server-discovery
+      - postgres
+
+  ## API Gateway config
+  api-gateway:
+    build: ./api-gateway
+    image: api-gateway-imagem
+    container_name: api-gateway
+    ports:
+      - "8080:8080"
+    expose:
+      - "8080"
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - LOGGING_LEVEL_ORG_SPRINGFRAMEWORK_SECURITY=TRACE
+      - EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE=http://server-discovery:8761/eureka/
+    depends_on:
+      - server-discovery

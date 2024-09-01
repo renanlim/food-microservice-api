@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="HttpClientEndpointsTabState">
+    <option name="requestToText" value="&lt;CachedHttpClientTabRequests&gt;&#10;  &lt;entry key=&quot;fdf80b529565ad7adf17c402fd67a51a7aa0fab8&quot; value=&quot;###&amp;#10;DELETE http://localhost:8084/order/{{idOrder}}/item?&amp;#10;    idOrderItem={{$random.alphanumeric(8)}}&quot; /&gt;&#10;&lt;/CachedHttpClientTabRequests&gt;" />
+  </component>
+</project>

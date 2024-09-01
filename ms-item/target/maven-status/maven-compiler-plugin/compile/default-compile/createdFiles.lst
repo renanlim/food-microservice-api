@@ -1,0 +1,6 @@
+com\cefet\ms_item\interfaces\RestaurantClient.class
+com\cefet\ms_item\model\ItemModel.class
+com\cefet\ms_item\services\ItemService.class
+com\cefet\ms_item\controller\ItemController.class
+com\cefet\ms_item\repositories\ItemRepository.class
+com\cefet\ms_item\MsItemApplication.class

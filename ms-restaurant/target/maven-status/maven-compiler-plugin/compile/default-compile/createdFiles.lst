@@ -1,0 +1,6 @@
+com\cefet\ms_restaurant\services\RestaurantService.class
+com\cefet\ms_restaurant\services\FacadeRestaurantService.class
+com\cefet\ms_restaurant\repositories\RestaurantRepository.class
+com\cefet\ms_restaurant\MsRestaurantApplication.class
+com\cefet\ms_restaurant\controller\RestaurantController.class
+com\cefet\ms_restaurant\model\RestaurantModel.class

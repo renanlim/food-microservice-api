@@ -1,0 +1,14 @@
+com\cefet\ms_order\controller\OrderItemController.class
+com\cefet\ms_order\services\OrderItemService.class
+com\cefet\ms_order\repositories\OrderRepository.class
+com\cefet\ms_order\services\OrderService.class
+com\cefet\ms_order\dto\ItemDTO.class
+com\cefet\ms_order\MsOrderApplication.class
+com\cefet\ms_order\repositories\OrderItemRepository.class
+com\cefet\ms_order\model\OrderItemModel.class
+com\cefet\ms_order\controller\OrderController.class
+com\cefet\ms_order\interfaces\ItemClient.class
+com\cefet\ms_order\model\OrderModel.class
+com\cefet\ms_order\interfaces\CustomerClient.class
+com\cefet\ms_order\interfaces\IOrderItemService.class
+com\cefet\ms_order\interfaces\RestaurantClient.class

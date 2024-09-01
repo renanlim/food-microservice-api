@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="HttpClientEndpointsTabState">
+    <option name="requestToText" value="&lt;CachedHttpClientTabRequests&gt;&#10;  &lt;entry key=&quot;92f3d5374ec20eca706657385ee86c7c6b30a19b&quot; value=&quot;###&amp;#10;GET http://localhost:8081/restaurante/name/{{nome}}&quot; /&gt;&#10;  &lt;entry key=&quot;4da510a54c4406e487e6352fb55acc7e12d2ef68&quot; value=&quot;###&amp;#10;POST http://localhost:8081/restaurante&amp;#10;Content-Type: application/json&amp;#10;&amp;#10;{&amp;#10;  &amp;quot;idRestaurante&amp;quot;: &amp;quot;&amp;quot;,&amp;#10;  &amp;quot;nome&amp;quot;: &amp;quot;&amp;quot;,&amp;#10;  &amp;quot;endereco&amp;quot;: &amp;quot;&amp;quot;,&amp;#10;  &amp;quot;telefone&amp;quot;: &amp;quot;&amp;quot;,&amp;#10;  &amp;quot;horario&amp;quot;: &amp;quot;&amp;quot;,&amp;#10;  &amp;quot;email&amp;quot;: &amp;quot;&amp;quot;,&amp;#10;  &amp;quot;senha&amp;quot;: &amp;quot;&amp;quot;&amp;#10;}&quot; /&gt;&#10;  &lt;entry key=&quot;4e230dba8abd166996c4f455eb2781263599c28d&quot; value=&quot;###&amp;#10;GET http://localhost:8081/restaurante&quot; /&gt;&#10;&lt;/CachedHttpClientTabRequests&gt;" />
+  </component>
+</project>

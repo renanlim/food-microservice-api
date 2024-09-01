@@ -1,0 +1,5 @@
+com\cefet\ms_customer\services\CustomerService.class
+com\cefet\ms_customer\model\CustomerModel.class
+com\cefet\ms_customer\controller\CustomerController.class
+com\cefet\ms_customer\MsCustomerApplication.class
+com\cefet\ms_customer\repositories\CustomerRepository.class

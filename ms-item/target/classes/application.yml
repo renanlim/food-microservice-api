@@ -1,0 +1,19 @@
+#server:
+#  port: 8083
+#spring:
+#  application:
+#    name: ms-item
+#
+#  datasource:
+#    driver-class-name: org.postgresql.Driver
+#    url: jdbc:postgresql://localhost:5432/ms-item
+#    username: postgres
+#    password: rei9122947
+#  jpa:
+#    hibernate:
+#      ddl-auto: update
+#    show-sql: true
+#    properties:
+#      hibernate:
+#        dialect: org.hibernate.dialect.PostgreSQLDialect
+#        format_sql: true
