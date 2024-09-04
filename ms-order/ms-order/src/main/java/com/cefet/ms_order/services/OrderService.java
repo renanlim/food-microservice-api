@@ -112,4 +112,21 @@ public class OrderService {
             throw new RuntimeException("Pedido com id " + idOrder + " não encontrado.");
         }
     }
+
+    @Transactional
+    public OrderModel cancelOrder(String idOrder, boolean isClient) {
+        OrderModel order = orderRepository.findById(idOrder)
+                .orElseThrow(() -> new RuntimeException("Pedido com id " + idOrder + " não encontrado."));
+
+        if ("AGUARDANDO CONFIRMAÇÃO".equals(order.getStatus())) {
+            if (isClient) {
+                order.setStatus("CANCELADO");
+            } else {
+                order.setStatus("NEGADO");
+            }
+            return orderRepository.save(order);
+        } else {
+            throw new RuntimeException("Não é possível cancelar o pedido no status atual: " + order.getStatus());
+        }
+    }
 }

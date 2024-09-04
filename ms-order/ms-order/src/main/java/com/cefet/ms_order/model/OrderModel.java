@@ -26,7 +26,7 @@ public class OrderModel {
     @Column(name = "idCustomer")
     private String idCustomer;
 
-    private String status;
+    private String status = "AGUARDANDO_CONFIRMACAO";
     private String payment;
     private String observation;
 
